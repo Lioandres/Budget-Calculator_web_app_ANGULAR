@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <p>Que quieres hacer</p>
+    <div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+         [(ngModel)]="webProduct"
+         (ngModelChange)="addWeb()"
+         
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Una pàgina web (500€)
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          [(ngModel)]="seoProduct"
+          (ngModelChange)="addSeo()"
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Una consultoria SEO (300€)
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          [(ngModel)]="googleProduct"
+          (ngModelChange)="addGoogle()"
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Una campanya de Goode Ads (200€)
+        </label>
+      </div>
+    </div>
+    <p>Preu:{{totalPrice}}   €</p>
+    
+  </div>
+</div>
