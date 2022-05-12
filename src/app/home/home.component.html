@@ -14,7 +14,10 @@
         <label class="form-check-label" for="flexCheckDefault">
           Una pàgina web (500€)
         </label>
-        <app-panell *ngIf='webProduct'[totalPrice]='totalPrice'>Aqui irá el panel</app-panell>
+        <app-panell *ngIf='webProduct'
+                    [totalPrice]='totalPrice'
+                    (sendTotalToHome)="showTotal($event)">
+        </app-panell>
 
 
       </div>

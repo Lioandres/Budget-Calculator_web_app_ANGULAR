@@ -8,12 +8,15 @@ export class QuotationService {
   constructor() { }
 
     
-  numPages:string=''
-  numLanguages:string=''
+ 
 
-  presupuestoTotla(a:number,b:number){
-    a+b
-  }
+  calculateTotal(subtotal:number,pages:number,languages:number){
+    let total=subtotal+(pages+languages)*30
+    console.log(`èl precio total es ${total}`)
+    console.log(pages)
+    console.log(languages)
+    return total
+   }
 
 
 }
