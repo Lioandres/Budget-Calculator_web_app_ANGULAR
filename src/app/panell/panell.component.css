@@ -1,0 +1,12 @@
+div {
+    width: 400px;
+    height: 150px;
+    margin: 5px;
+    padding: 20px 5px 10px;
+ 
+    border: 3px black solid;
+    border-radius: 25px;
+}
+.box{
+    margin: 5px;
+}

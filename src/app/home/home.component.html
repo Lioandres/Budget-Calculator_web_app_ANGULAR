@@ -10,11 +10,13 @@
           id="flexCheckDefault"
          [(ngModel)]="webProduct"
          (ngModelChange)="addWeb()"
-         
         />
         <label class="form-check-label" for="flexCheckDefault">
           Una pàgina web (500€)
         </label>
+        <app-panell *ngIf='webProduct'[totalPrice]='totalPrice'>Aqui irá el panel</app-panell>
+
+
       </div>
       <div class="form-check">
         <input
@@ -39,7 +41,7 @@
           (ngModelChange)="addGoogle()"
         />
         <label class="form-check-label" for="flexCheckChecked">
-          Una campanya de Goode Ads (200€)
+          Una campanya de Google Ads (200€)
         </label>
       </div>
     </div>
