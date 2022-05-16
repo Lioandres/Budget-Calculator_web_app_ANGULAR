@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuotationService } from '../quotation.service';
 
 
 @Component({
@@ -13,32 +14,31 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  totalPrice:number=0
+  subTotal:number=0
+  addExtra:number=0
+  
+
 
   webProduct:boolean=false
   addWeb() {
-    if(this.webProduct) this.totalPrice+=500
-    else this.totalPrice-=500
+    if(this.webProduct) this.subTotal+=500
+    else this.subTotal-=500
   }
 
   seoProduct:boolean=false
   addSeo() {
-    if(this.seoProduct) this.totalPrice+=300
-    else this.totalPrice-=300
+    if(this.seoProduct) this.subTotal+=300
+    else this.subTotal-=300
   }
 
   googleProduct:boolean=false
   addGoogle() {
-    if(this.googleProduct) this.totalPrice+=200
-    else this.totalPrice-=200
+    if(this.googleProduct) this.subTotal+=200
+    else this.subTotal-=200
   }
 
   showTotal(event:number){
-    this.totalPrice=event
-  console.log(event)
-
-
-
+    this.addExtra=event
   }
 
 

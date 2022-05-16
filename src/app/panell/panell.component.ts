@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { QuotationService } from '../quotation.service';
 
@@ -12,27 +12,34 @@ import { QuotationService } from '../quotation.service';
 export class PanellComponent implements OnInit {
 
 
-  constructor(private calcTotal:QuotationService) { }
+  constructor(private calcTotal:QuotationService,
+              private fb:FormBuilder) { }
+
+ 
+  myform:FormGroup= this.fb.group({
+    pages:[0,[Validators.required,Validators.min(0),Validators.pattern('^([1-9]+\\d*)|[0]')]],
+    languages:[0,[Validators.required,Validators.min(0),Validators.pattern('^([1-9]+\\d*)|[0]')]]
+  })
+
 
   ngOnInit(): void {
   }
 
-  myform:FormGroup= new FormGroup({
-    'nombre':new FormControl ('RTX4080ti')
-  })
 
-@Input() totalPrice=0
 @Output() sendTotalToHome:EventEmitter<number>=new EventEmitter<number>();
 
-   numPages:number=0
-   numLanguages:number=0
-   totalQuotation:number=0
+   
+   
   
- calculate(){
-    let totalToSend:number= this.calcTotal.calculateTotal(this.totalPrice,this.numPages,this.numLanguages)
-    this.sendTotalToHome.emit(totalToSend)
-   }
+ calculate(evt:any){
+   let extraToAdd=(parseInt(this.myform.get('pages')?.value) +parseInt(this.myform.get('languages')?.value))*30
+    this.sendTotalToHome.emit(extraToAdd)
+    console.log(evt)
+   
+    
+
   }
+}
 
 
   

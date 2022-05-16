@@ -1,16 +1,27 @@
-<div>
-    Numero de páginas <input class='box' 
-                            type="number"
-                            [(ngModel)]="numPages">
-    Número de idiomas <input class='box'
-                            type="number"
-                            [(ngModel)]="numLanguages">
+<div class="border">
+    <form [formGroup]="myform" >
+                    <div>
+                        <label  for="page">Número de páginas </label> 
+                        <input  type="text"
+                                name="page"
+                                formControlName="pages"
+                                (mousedown)="calculate($event)">
+                        <div class="warning"
+                            *ngIf="myform.get('pages')?.hasError('required')">ingrese un número mayor o igual a cero</div>
+                    </div>
+                    <div>
+                        <label for="pages">Número de idiomas  </label>   
+                        <input 
+                            type="text"
+                            name="languages"
+                            formControlName="languages"
+                            (mousedown)="calculate($event)">
+                        <div class="warning"
+                        *ngIf="myform.get('languages')?.hasError('required')"
+                        >ingrese un número mayor o igual a cero</div>
+                    </div>
                         
-    <button (click)='calculate()'>Calcular</button>
-    <form>
-        <input type="text"
-                class="form-control"
-                formControlName="'nombre"
-                placeholder="nombre del producto">
-    </form>
+    <!-- <button type="submit" [disabled]="myform.invalid">Calcular</button> -->
+    
+</form>
 </div>

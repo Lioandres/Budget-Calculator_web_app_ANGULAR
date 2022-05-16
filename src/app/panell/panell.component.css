@@ -1,6 +1,6 @@
-div {
-    width: 400px;
-    height: 150px;
+.border {
+    width: 450px;
+    height: 200px;
     margin: 5px;
     padding: 20px 5px 10px;
  
@@ -8,5 +8,16 @@ div {
     border-radius: 25px;
 }
 .box{
-    margin: 5px;
+    margin: 20px;
+}
+
+.warning{
+    font-size: 10px;
+    color:red;
+    margin-left: 160px;
+    
+    
+}
+label{
+    margin: 10px;
 }

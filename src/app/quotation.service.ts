@@ -7,14 +7,15 @@ export class QuotationService {
 
   constructor() { }
 
-    
+
  
 
-  calculateTotal(subtotal:number,pages:number,languages:number){
-    let total=subtotal+(pages+languages)*30
+  calculateTotal(a:number,b:number){
+    let total=(a+b)*30
     console.log(`èl precio total es ${total}`)
-    console.log(pages)
-    console.log(languages)
+    console.log('pades :'+ a)
+    console.log('languages: '+b)
+    console.log(total)
     return total
    }
 

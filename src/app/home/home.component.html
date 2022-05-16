@@ -15,7 +15,7 @@
           Una pàgina web (500€)
         </label>
         <app-panell *ngIf='webProduct'
-                    [totalPrice]='totalPrice'
+                         
                     (sendTotalToHome)="showTotal($event)">
         </app-panell>
 
@@ -48,7 +48,7 @@
         </label>
       </div>
     </div>
-    <p>Preu:{{totalPrice}}   €</p>
+    <p>Preu:{{subTotal+addExtra}}   €</p>
     
   </div>
 </div>
