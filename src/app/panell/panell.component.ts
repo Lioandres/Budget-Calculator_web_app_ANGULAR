@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { QuotationService } from '../quotation.service';
 
 @Component({
@@ -32,17 +31,21 @@ export class PanellComponent implements OnInit {
    
   
  calculate(){
-   let extraToAdd=this.calcTotal.calculateTotal(parseInt(this.myform.get('pages')?.value) , parseInt(this.myform.get('languages')?.value))
-  this.sendTotalToHome.emit(extraToAdd)
+   let extraToAdd:number=0
+  if(this.myform.get('pages')?.invalid && this.myform.get('languages')?.valid) {
+   extraToAdd=this.calcTotal.calculateTotal(0 , parseInt(this.myform.get('languages')?.value))
   }
+  if(this.myform.get('pages')?.valid && this.myform.get('languages')?.invalid) {
+     extraToAdd=this.calcTotal.calculateTotal(parseInt(this.myform.get('pages')?.value) ,0)
+   }
+   if(this.myform.valid) {
+     extraToAdd=this.calcTotal.calculateTotal(parseInt(this.myform.get('pages')?.value) , parseInt(this.myform.get('languages')?.value))  
+   }
+   this.sendTotalToHome.emit(extraToAdd)
 
 
 
-
-
-
-
-
+ }
 }
 
   

@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, forwardRef,OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -22,42 +22,42 @@ export class InputButtonsComponent implements OnInit, ControlValueAccessor {
   ngOnInit(): void {
   }
 
- @Input() min:number=0
- @Input() max:number=10000000
 
 
 
-  value:number=0
+
+  value:any=0
   increase(){
-    if(typeof this.min==='undefined'|| this.value<this.max) {
-    this.value++}
+   
+    this.value++
     this.onChange(this.value)
   }
 
   decrease(){
-        if(typeof this.max==='undefined'|| this.value>this.min) {
-    this.value--}
+   
+    this.value--
     this.onChange(this.value)
+    
   }
   
 onChange:any =() => {}
 onTouch:any=()=>{}
-disabled=false
+disabled:boolean=false
 
-writeValue(value:number):void{
-this.value=value
+writeValue(valueI:number):void{
+this.value=valueI
 }
 
 registerOnChange(fn:any):void{
-  this.onChange=fn
+  this.onChange=fn  //llama  a la funcion misma onChange
 }
 
 
 registerOnTouched(fn:any):void{
-  this.onChange=fn
+  this.onTouch=fn
 }
 
-SetDissableState?(isDisabled:boolean):void{
-  this.disabled=isDisabled
+SetDissableState (state:boolean):void{
+  this.disabled=state
 }
 }
