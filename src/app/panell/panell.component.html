@@ -1,27 +1,22 @@
 <div class="border">
-    <form [formGroup]="myform" >
-                    <div>
-                        <label  for="page">Número de páginas </label> 
-                        <input  type="text"
-                                name="page"
-                                formControlName="pages"
-                                (mousedown)="calculate($event)">
-                        <div class="warning"
-                            *ngIf="myform.get('pages')?.hasError('required')">ingrese un número mayor o igual a cero</div>
-                    </div>
-                    <div>
-                        <label for="pages">Número de idiomas  </label>   
-                        <input 
-                            type="text"
-                            name="languages"
-                            formControlName="languages"
-                            (mousedown)="calculate($event)">
-                        <div class="warning"
-                        *ngIf="myform.get('languages')?.hasError('required')"
-                        >ingrese un número mayor o igual a cero</div>
-                    </div>
-                        
-    <!-- <button type="submit" [disabled]="myform.invalid">Calcular</button> -->
+  <form [formGroup]="myform">
     
-</form>
+    <div>
+      <label for="page">Número de páginas </label>
+      <input  type="text" name="page" formControlName="pages"(mousedown)="calculate()">
+      <div class="warning" *ngIf="myform.get('pages')?.hasError('required')">ingrese un número mayor o igual a cero
+      </div>
+    </div>
+
+
+    <div>
+      <label for="pages">Número de idiomas </label>
+      <input type="text" name="languages" formControlName="languages" (mousedown)="calculate()">
+      <div class="warning" *ngIf="myform.get('languages')?.hasError('required')">ingrese un número mayor o igual a cero
+      </div>
+    </div>
+
+    
+
+  </form>
 </div>

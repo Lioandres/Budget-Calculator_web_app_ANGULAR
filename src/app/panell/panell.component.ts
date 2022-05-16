@@ -31,16 +31,19 @@ export class PanellComponent implements OnInit {
    
    
   
- calculate(evt:any){
-   let extraToAdd=(parseInt(this.myform.get('pages')?.value) +parseInt(this.myform.get('languages')?.value))*30
-    this.sendTotalToHome.emit(extraToAdd)
-    console.log(evt)
-   
-    
-
+ calculate(){
+   let extraToAdd=this.calcTotal.calculateTotal(parseInt(this.myform.get('pages')?.value) , parseInt(this.myform.get('languages')?.value))
+  this.sendTotalToHome.emit(extraToAdd)
   }
-}
 
+
+
+
+
+
+
+
+}
 
   
 
