@@ -11,7 +11,8 @@ export class AppComponent {
   started:boolean=false
 
   toStart(){
-    this.started=true
+    if (this.started) this.started=false
+    else this.started=true
   }
 
 }

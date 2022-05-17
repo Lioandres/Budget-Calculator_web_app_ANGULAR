@@ -1,5 +1,5 @@
 
-<div *ngIf="started===false">
+<div *ngIf="started===false ;else comeBack" >
 
 
 <div class="container">
@@ -9,15 +9,21 @@
         El web reacciona i modifica el preu total en funció de les opcions escollides per l'usuari/ària.</p>
 
       <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" routerLink="home" type="button" (click)="toStart()">Comenzar</button>
+        <button class="btn btn-primary" routerLink="home" type="button" (click)="toStart()">Començar</button>
       </div>
 
     </div>
   </div>
 </div>
 
-
 </div>
+
+<ng-template #comeBack>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" routerLink="" type="button" (click)="toStart()">Enrere</button>
+  </div>
+  </ng-template>
+
 
 <router-outlet>
 

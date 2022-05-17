@@ -46,8 +46,5 @@ export class HomeComponent implements OnInit {
     
   }
 
-  toBack(){
-    this.started=false
-
-  } 
+  
 }
