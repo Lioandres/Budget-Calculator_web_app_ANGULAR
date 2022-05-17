@@ -1,1 +1,24 @@
-<app-home></app-home>
+
+<div *ngIf="started===false">
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>Aquesta és una aplicació que facilita els càlculs del pressupost d'una pàgina web.
+        El web reacciona i modifica el preu total en funció de les opcions escollides per l'usuari/ària.</p>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" routerLink="home" type="button" (click)="toStart()">Comenzar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<router-outlet>
+
+</router-outlet>

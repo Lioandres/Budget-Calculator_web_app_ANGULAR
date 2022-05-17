@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { QuotationService } from '../quotation.service';
 
 
@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input() started:boolean=true
 
   subTotal:number=0
   addExtra:number=0
@@ -44,5 +46,8 @@ export class HomeComponent implements OnInit {
     
   }
 
+  toBack(){
+    this.started=false
 
+  } 
 }

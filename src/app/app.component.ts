@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Spring_7_Tasca';
+
+  started:boolean=false
+
+  toStart(){
+    this.started=true
+  }
+
 }
