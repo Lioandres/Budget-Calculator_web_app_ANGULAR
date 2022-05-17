@@ -27,7 +27,7 @@ export class PanellComponent implements OnInit {
 
 @Output() sendTotalToHome:EventEmitter<number>=new EventEmitter<number>();
 
-   
+
    
   
  calculate(){

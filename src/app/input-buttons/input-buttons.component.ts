@@ -1,4 +1,4 @@
-import { Component, forwardRef,OnInit } from '@angular/core';
+import { Component, EventEmitter, forwardRef, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -23,22 +23,32 @@ export class InputButtonsComponent implements OnInit, ControlValueAccessor {
   }
 
 
-
+@Output() sendToCalculate:EventEmitter<any>=new EventEmitter<number>();
 
 
   value:any=0
+
+  
   increase(){
-   
     this.value++
     this.onChange(this.value)
+    this.onTouch(this.value)
+    this.sendToCalculate.emit()
   }
 
   decrease(){
-   
     this.value--
     this.onChange(this.value)
+    this.onTouch(this.value)
+    this.sendToCalculate.emit()
     
   }
+  calcManualEnter(){
+    this.onChange(this.value)
+    this.onTouch(this.value)
+    this.sendToCalculate.emit()
+  }
+  
   
 onChange:any =() => {}
 onTouch:any=()=>{}
@@ -46,6 +56,7 @@ disabled:boolean=false
 
 writeValue(valueI:number):void{
 this.value=valueI
+
 }
 
 registerOnChange(fn:any):void{

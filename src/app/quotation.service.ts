@@ -10,13 +10,13 @@ export class QuotationService {
 
  
 
-  calculateTotal(a:number,b:number){
-    let total=(a+b)*30
-    console.log(`èl precio total es ${total}`)
-    console.log('pades :'+ a)
-    console.log('languages: '+b)
-    console.log(total)
-    return total
+  calculateTotal(pages:number,languages:number){
+    let extra=(pages+languages)*30
+    console.log(`el precio a agregar es ${extra}`)
+    console.log('paginas :'+ pages)
+    console.log('languages: '+languages)
+    console.log(extra)
+    return extra
    }
 
 

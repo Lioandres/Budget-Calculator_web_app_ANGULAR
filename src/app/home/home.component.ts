@@ -16,13 +16,15 @@ export class HomeComponent implements OnInit {
 
   subTotal:number=0
   addExtra:number=0
-  
 
 
   webProduct:boolean=false
   addWeb() {
     if(this.webProduct) this.subTotal+=500
-    else this.subTotal-=500
+    else {
+      this.subTotal-=500
+      this.addExtra=0
+    }
   }
 
   seoProduct:boolean=false
@@ -38,7 +40,8 @@ export class HomeComponent implements OnInit {
   }
 
   showTotal(event:number){
-    this.addExtra=event
+    if (this.webProduct) this.addExtra=event
+    
   }
 
 
