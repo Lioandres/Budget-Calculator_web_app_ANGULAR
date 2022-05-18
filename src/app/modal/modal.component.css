@@ -1,0 +1,19 @@
+
+.text{
+    text-align: center;
+    background-color: white;
+    padding: 200px o;
+    border: 1px black solid;
+    border-radius: 25px;
+    width: 700px;
+
+}
+
+button{
+  
+   background-color: none;
+   border:none;
+    border-radius: 25px;
+    
+   
+}

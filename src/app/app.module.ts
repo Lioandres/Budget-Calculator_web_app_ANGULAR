@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { PanellComponent } from './panell/panell.component';
 import { InputButtonsComponent } from './input-buttons/input-buttons.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalComponent } from './modal/modal.component';
+
+
+
 
 
 const appRoutes:Routes=[
  
- 
-
-  {
+   {
     path:'home',
     component:HomeComponent,
     pathMatch:'full'
@@ -24,7 +26,8 @@ const appRoutes:Routes=[
     AppComponent,
     HomeComponent,
     PanellComponent,
-    InputButtonsComponent
+    InputButtonsComponent,
+    ModalComponent
     
   ],
   imports: [

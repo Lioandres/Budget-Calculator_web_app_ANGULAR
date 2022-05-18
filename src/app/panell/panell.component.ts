@@ -46,6 +46,7 @@ export class PanellComponent implements OnInit {
 
 
  }
+ 
 }
 
   
