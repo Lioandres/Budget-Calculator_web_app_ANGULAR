@@ -7,6 +7,7 @@ import { PanellComponent } from './panell/panell.component';
 import { InputButtonsComponent } from './input-buttons/input-buttons.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -34,7 +35,8 @@ const appRoutes:Routes=[
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule
   ],
   exports:[
     RouterModule

@@ -17,4 +17,5 @@ export class ModalComponent implements OnInit {
 
  @Input() extra:string=''
 
+
 }
