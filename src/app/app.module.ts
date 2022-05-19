@@ -8,6 +8,8 @@ import { InputButtonsComponent } from './input-buttons/input-buttons.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PressupostListComponent } from './pressupost-list/pressupost-list.component';
+import { QuotationFormComponent } from './quotation-form/quotation-form.component';
 
 
 
@@ -28,7 +30,9 @@ const appRoutes:Routes=[
     HomeComponent,
     PanellComponent,
     InputButtonsComponent,
-    ModalComponent
+    ModalComponent,
+    PressupostListComponent,
+    QuotationFormComponent
     
   ],
   imports: [

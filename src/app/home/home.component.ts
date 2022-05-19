@@ -9,7 +9,7 @@ import { QuotationService } from '../quotation.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auxServices:QuotationService) { }
 
   ngOnInit(): void {
   }
@@ -46,5 +46,8 @@ export class HomeComponent implements OnInit {
     
   }
 
+  addQuotByService(quotInfo:[number,string]){
+    this.auxServices.addQuotation(quotInfo[0],quotInfo[1],'hola2',this.subTotal+this.addExtra,'hola3')
+  }
   
 }

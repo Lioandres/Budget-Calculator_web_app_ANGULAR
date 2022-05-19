@@ -1,4 +1,4 @@
-export interface QuotationList {
+export interface Quotation {
     quotationNumber:number,
     clientName:string,
     services:string,
