@@ -28,23 +28,24 @@ export class PanellComponent implements OnInit {
 @Output() sendTotalToHome:EventEmitter<number>=new EventEmitter<number>();
 
 
-   
+   pageInvalid=this.myform.get('pages')?.invalid
+   pageValid=this.myform.get('languages')?.valid
+   languagesValid=this.myform.get('languages')?.valid
+   languagesInvalid=this.myform.get('languages')?.invalid
+
   
  calculate(){
    let extraToAdd:number=0
   if(this.myform.get('pages')?.invalid && this.myform.get('languages')?.valid) {
-   extraToAdd=this.calcTotal.calculateTotal(0 , parseInt(this.myform.get('languages')?.value))
+   extraToAdd=this.calcTotal.calculateExtraToAdd(0 , parseInt(this.myform.get('languages')?.value))
   }
   if(this.myform.get('pages')?.valid && this.myform.get('languages')?.invalid) {
-     extraToAdd=this.calcTotal.calculateTotal(parseInt(this.myform.get('pages')?.value) ,0)
+     extraToAdd=this.calcTotal.calculateExtraToAdd(parseInt(this.myform.get('pages')?.value) ,0)
    }
    if(this.myform.valid) {
-     extraToAdd=this.calcTotal.calculateTotal(parseInt(this.myform.get('pages')?.value) , parseInt(this.myform.get('languages')?.value))  
+     extraToAdd=this.calcTotal.calculateExtraToAdd(parseInt(this.myform.get('pages')?.value) , parseInt(this.myform.get('languages')?.value))  
    }
    this.sendTotalToHome.emit(extraToAdd)
-
-
-
  }
  
 }

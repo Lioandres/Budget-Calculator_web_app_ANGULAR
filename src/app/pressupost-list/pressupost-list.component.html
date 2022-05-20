@@ -1,5 +1,24 @@
- <ul *ngFor="let quote of quotationList">
-      <li>{{quote.quotationNumber}}</li>
- </ul>
+<div class="mt-3 quotationList">
+      <button class="btn btn-primary m-1"(click)="toOrderAlfa()">Por Nombre</button>
+      <button class="btn btn-primary m-1"(click)="toOrderDate()">Por fecha</button>
+      <button class="btn btn-primary m-1"(click)="toReOrder()">Reset</button>
+<p class="fs-4 text-center">Presupuesto   -   Cliente </p>
+<hr>
+   <div *ngIf="(!orderAlf && !orderDate)">
+      <ul *ngFor="let quote of quotationList; let i=index"class="fs-5" >
+      <li> {{ quote.quotationName }}----{{ quote.clientName }}</li>
+       </ul>
+   </div>
+   <div *ngIf="orderAlf">
+      <ul  *ngFor="let quote of quotationSorted; let i=index"class="fs-5" >
+            <li> {{ quote.quotationName }}----{{ quote.clientName }}</li>
+      </ul>
+   </div>
+   <div *ngIf="orderDate">
+      <ul  *ngFor="let quote of quotationListDate; let i=index"class="fs-5" >
+            <li> {{ quote.quotationName }}----{{ quote.clientName }}</li>
+      </ul>
+   </div>
+</div>
     
   

@@ -9,9 +9,9 @@ import { QuotationService } from '../quotation.service';
 })
 export class QuotationFormComponent implements OnInit {
 
-  @Output() info:EventEmitter<[number,string]>=new EventEmitter
+  @Output() infoQuote:EventEmitter<[string,string]>=new EventEmitter
   
-  quoteNu:number=0
+  quoteNa:string=''
   clientNa:string=''
   
   constructor(private auxServices:QuotationService) { }
@@ -21,7 +21,7 @@ export class QuotationFormComponent implements OnInit {
 
 
   sendQuotInfoToHome(){
-    this.info.emit([this.quoteNu, this.clientNa])
+    this.infoQuote.emit([this.quoteNa, this.clientNa])
    }
 
    get quotationList(){

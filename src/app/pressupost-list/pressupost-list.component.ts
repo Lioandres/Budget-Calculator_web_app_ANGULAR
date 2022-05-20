@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Quotation } from '../interfaces/quotation.intarface';
 import { QuotationService } from '../quotation.service';
 
 @Component({
@@ -8,25 +9,37 @@ import { QuotationService } from '../quotation.service';
 })
 export class PressupostListComponent implements OnInit {
 
-  @Output() info:EventEmitter<[number,string]>=new EventEmitter
-  
-  quoteNu:number=0
-  clientNa:string=''
   
   constructor(private auxServices:QuotationService) { }
 
   ngOnInit(): void {
   }
 
-
-  sendQuotInfoToHome(){
-    this.info.emit([this.quoteNu, this.clientNa])
-   }
-
    get quotationList(){
      return this.auxServices._quotationList
    }
 
+
+  quotationSorted:Quotation[]=[]
+  orderAlf:boolean=false
+  toOrderAlfa(){
+      this.orderAlf=true
+      this.orderDate=false
+      this.quotationSorted=this.auxServices.toOrderAlfaux()
+  }
+  
+ quotationListDate:Quotation[]=[]  
+  orderDate:boolean=false
+  toOrderDate(){
+    this.orderDate=true
+    this.orderAlf=false
+    this.quotationListDate=this.auxServices.toOrderDateaux()
+  }
+
+  toReOrder() {
+    this.orderDate=false
+    this.orderAlf=false
+   }
 }
 
 

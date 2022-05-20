@@ -1,7 +1,15 @@
-export interface Quotation {
-    quotationNumber:number,
+export{Quotation,Services}
+
+interface Quotation {
+    quotationName:string,
     clientName:string,
-    services:string,
+    services:Services,
     price:number,
     date:string
+}
+
+interface Services {
+    webProductService:boolean,
+    seoProductService:boolean,
+    googleProductService:boolean
 }

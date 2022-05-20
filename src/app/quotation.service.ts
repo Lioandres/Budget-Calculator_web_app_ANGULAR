@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Quotation } from './interfaces/quotation.intarface';
+import { Quotation, Services } from './interfaces/quotation.intarface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,33 +8,67 @@ export class QuotationService {
 
   constructor() { }
 
-  _quotationList:Quotation[]=[]
 
+  calcTotal(webProduct:boolean,seoProduct:boolean,googleProduct:boolean,addExtra:number):number {
+    let total:number=0
+    if(webProduct) total=500+addExtra
+    else total=0
+    if(seoProduct) total+=300
+    if(googleProduct) total+=200
+    return total
+  }
 
-
-  calculateTotal(pages:number,languages:number){
+  calculateExtraToAdd(pages:number,languages:number){
     let extraToAdd=(pages+languages)*30
     return extraToAdd
    }
 
+   _quotationList:Quotation[]=[]
 
   get quotationList():Quotation[] {
     return [...this._quotationList]
   }
 
- addQuotation (quotNumber:number,clientName:string,services:string,price:number,date:string) {
+  
+ addQuotation (quotName:string,clientName:string,services:Services,price:number) {
 
    let quotation={
-    quotationNumber:quotNumber,
+    quotationName:quotName,
     clientName:clientName,
     services:services,
     price:price,
-    date:date
+    date:new Date().toISOString()
    }
-   this._quotationList.push(quotation)
+   this._quotationList.unshift(quotation)
    console.log(this._quotationList)
-
  }
+
+ toOrderAlfaux(){
+   let quotationSorted=[...this._quotationList]
+   quotationSorted.sort((a,b)=>{
+     if (a.quotationName > b.quotationName) return 1
+     if (a.quotationName < b.quotationName) return -1
+     return 0
+    })
+    return quotationSorted
+}
+
+toOrderDateaux(){
+  let quotationListDate=[...this._quotationList]   
+  quotationListDate.sort((a,b)=>{
+    if (a.date > b.date) return 1
+    if (a.date < b.date) return -1
+    return 0
+   })
+   return quotationListDate
+}
+
+toReOderaux(){
+  this._quotationList=[]
+}
+  
+  
+
 
 
 }
