@@ -66,8 +66,15 @@ toOrderDateaux(){
 toReOderaux(){
   this._quotationList=[]
 }
-  
-  
+
+findQuotationsnaux(keyWord:string) {
+let h
+ h=this._quotationList.filter(quotation=>quotation.quotationName===keyWord?? quotation)
+console.log (h)
+ return h} 
+
+
+
 
 
 
