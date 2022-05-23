@@ -1,32 +1,41 @@
 
-<div *ngIf="started===false ;else comeBack" >
+<div *ngIf="started === false; else comeBack">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>
+          Aquesta és una aplicació que facilita els càlculs del pressupost d'una
+          pàgina web. El web reacciona i modifica el preu total en funció de les
+          opcions escollides per l'usuari/ària.
+        </p>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <p>Aquesta és una aplicació que facilita els càlculs del pressupost d'una pàgina web.
-        El web reacciona i modifica el preu total en funció de les opcions escollides per l'usuari/ària.</p>
-
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" routerLink="home" type="button" (click)="toStart()">Començar</button>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button
+            class="btn btn-primary"
+            routerLink="home"
+            type="button"
+            (click)="started=!started"
+          >
+            Començar
+          </button>
+        </div>
       </div>
-
     </div>
-    
-
   </div>
-</div>
-
 </div>
 
 <ng-template #comeBack>
   <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-3">
-    <button class="btn btn-primary" routerLink="" type="button" (click)="toStart()">Enrere</button>
+    <button
+      class="btn btn-primary"
+      routerLink=""
+      type="button"
+      (click)="started=!started"
+    >
+      Enrere
+    </button>
   </div>
-  <hr>
-  </ng-template>
+  <hr />
+</ng-template>
 
-
-<router-outlet>
-
-</router-outlet>
+<router-outlet> </router-outlet>

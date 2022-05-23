@@ -6,7 +6,9 @@ import { Quotation, Services } from './interfaces/quotation.intarface';
 })
 export class QuotationService {
 
-  constructor() { }
+  constructor() {
+    this._quotationList=JSON.parse(localStorage.getItem('quotationList')!)||[]
+   }
 
 
   calcTotal(webProduct:boolean,seoProduct:boolean,googleProduct:boolean,addExtra:number):number {
@@ -41,6 +43,7 @@ export class QuotationService {
    }
    this._quotationList.unshift(quotation)
    console.log(this._quotationList)
+   localStorage.setItem('quotationList',JSON.stringify(this._quotationList))
  }
 
  toOrderAlfaux(){

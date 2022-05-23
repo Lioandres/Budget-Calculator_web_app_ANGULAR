@@ -52,6 +52,7 @@ findQuotation(argument:string){
     this.orderDate=false
     this.orderAlf=false
 this.quotationsFound=this.auxServices.findQuotationsnaux(argument)
+
    }
 }
 

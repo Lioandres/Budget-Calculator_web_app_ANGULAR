@@ -15,13 +15,29 @@ import { QuotationFormComponent } from './quotation-form/quotation-form.componen
 
 
 
+
 const appRoutes:Routes=[
  
-   {
+  // {
+  //   path:'',
+  //   component:AppComponent,
+  //   pathMatch:'full'
+  // },
+  {
     path:'home',
     component:HomeComponent,
     pathMatch:'full'
+  },
+  {
+    path:'home/:webProduct/:seoProduct/:googleProduct',
+    component:HomeComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'**',
+    redirectTo:''
   }
+
 ]
 
 @NgModule({
@@ -37,10 +53,12 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
+    
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule
+    NgbModule,
+    
   ],
   exports:[
     RouterModule
