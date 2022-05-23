@@ -7,7 +7,7 @@ import { Quotation, Services } from './interfaces/quotation.intarface';
 export class QuotationService {
 
   constructor() {
-    this._quotationList=JSON.parse(localStorage.getItem('quotationList')!)||[]
+    //this._quotationList=JSON.parse(localStorage.getItem('quotationList')!)||[]
    }
 
 

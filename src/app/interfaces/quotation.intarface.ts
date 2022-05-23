@@ -11,5 +11,8 @@ interface Quotation {
 interface Services {
     webProductService:boolean,
     seoProductService:boolean,
-    googleProductService:boolean
+    googleProductService:boolean,
+    webPages:number,
+    webLang:number
+
 }
