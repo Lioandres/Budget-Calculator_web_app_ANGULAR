@@ -12,25 +12,24 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
 constructor(private auxServices:QuotationService,
-            private activatedRoute:ActivatedRoute,) {}
+            private activatedRoute:ActivatedRoute,
+            ) {}
             
 
-              
 ngOnInit() {
- 
-this.activatedRoute.params
-.subscribe(({webProduct,seoProduct,googleProduct})=>{
-  this.webProduct=webProduct || false
-  this.seoProduct=seoProduct || false
-  this.googleProduct=googleProduct || false
-  console.log(webProduct)
-  console.log(seoProduct)
-  console.log(googleProduct)
-  this.showTotal()
-  
-})
+ this.activatedRoute.queryParams
+ .subscribe(params=>{
+   this.webProduct=params['web'] || false
+   this.seoProduct=params['seo'] || false
+   this.googleProduct=params['google'] || false
+   this.numPages=params['numPages'] || 0
+   this.numLang=params['numLang'] || 0
 
-}
+   this.showTotal()
+ })
+   
+}              
+
 
   @Input() started:boolean=true
   

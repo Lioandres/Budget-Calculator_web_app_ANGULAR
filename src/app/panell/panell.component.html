@@ -1,13 +1,17 @@
 <div class="border">
   <form [formGroup]="myform">
+
+
     <div>
       <label for="page">Número de páginas </label>
-      <app-input-buttons formControlName="pages" (sendToCalculate)="calculate()"></app-input-buttons> <app-modal extra="páginas"></app-modal>
+      <app-input-buttoms-pages formControlName="pages" (sendToCalculatePages)="calculate()"></app-input-buttoms-pages>  
+      <app-modal-pages extra="páginas"></app-modal-pages>
       <div class="warning" *ngIf="myform.get('pages')?.invalid && myform.get('pages')?.touched">
         ingrese un número mayor o igual a cero
       </div>
     </div>
 
+    
     <div>
       <label for="languages">Número de idiomas </label>
       <app-input-buttons formControlName="languages" (sendToCalculate)="calculate()"></app-input-buttons>
@@ -18,5 +22,7 @@
         ingrese un número mayor o igual a cero
       </div>
     </div>
+
+
   </form>
 </div>

@@ -1,3 +1,10 @@
-<button (click)="increase()" >+</button>
-<input  type="text" name="page" [(ngModel)]="value" (ngModelChange)="calcManualEnter()">
-<button (click)="decrease()" >-</button>
+<button (click)="increase()"
+[routerLink]="[]" [queryParams]="{numLang:languages+1}" queryParamsHandling="merge"
+
+ >+</button>
+<input  type="text" name="page" [(ngModel)]="languages" (ngModelChange)="calcManualEnter()"
+[routerLink]="[]" [queryParams]="{numLang:languages+1}" queryParamsHandling="merge"
+>
+<button (click)="decrease()" 
+[routerLink]="[]" [queryParams]="{numLang:languages+1}" queryParamsHandling="merge"
+>-</button>

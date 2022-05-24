@@ -1,0 +1,9 @@
+<button (click)="increase()" [routerLink]="[]" [queryParams]="{numPages:pages+1}" queryParamsHandling="merge">+</button>
+
+<input type="text" name="page" [(ngModel)]="pages" (ngModelChange)="calcManualEnter()" [routerLink]="[]"
+  [queryParams]="{numPages:pages+1}" queryParamsHandling="merge">
+
+
+
+<button (click)="decrease()" [routerLink]="[]" [queryParams]="{numPages:pages+1}" queryParamsHandling="merge">
+  -</button>

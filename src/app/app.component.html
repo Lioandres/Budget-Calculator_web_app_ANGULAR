@@ -15,6 +15,7 @@
             routerLink="home"
             type="button"
             (click)="started=!started"
+             [queryParams]="{start:!started}" queryParamsHandling="merge"
           >
             Començar
           </button>

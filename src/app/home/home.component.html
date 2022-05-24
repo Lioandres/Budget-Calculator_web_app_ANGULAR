@@ -3,24 +3,24 @@
 
     <div class="col-7">
       <p>Que quieres hacer</p>
-      <!-- <p>el web es : {{web }}s el seo:{{seo}} y el google:  {{google}}</p> -->
-      <div>
+     <div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="webProduct"
             (ngModelChange)="showTotal()"
-            [routerLink]="[]" [queryParams]="{ webProduct: !webProduct }" queryParamsHandling="merge" />
+             [routerLink]="[]" [queryParams]="{web:!webProduct}" queryParamsHandling="merge"
+             />
           <label class="form-check-label" for="flexCheckDefault">
             Una pàgina web (500€)
           </label>
           <app-panell *ngIf='webProduct' (sendTotalToHome)="addExtraToTotal($event)"
-          (sendPagesLabnToHome)="addPageandLang($event)"[routerLink]="[]">
+          (sendPagesLabnToHome)="addPageandLang($event)">
           </app-panell>
 
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [(ngModel)]="seoProduct"
             (ngModelChange)="showTotal()"
-            [routerLink]="[]" [queryParams]="{ seoProduct: !seoProduct }" queryParamsHandling="merge" />
+            [routerLink]="[]" [queryParams]="{seo:!seoProduct}" queryParamsHandling="merge"/>
           <label class="form-check-label" for="flexCheckChecked">
             Una consultoria SEO (300€)
           </label>
@@ -28,8 +28,7 @@
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [(ngModel)]="googleProduct"
             (ngModelChange)="showTotal()"
-            [routerLink]="[]" [queryParams]="{ googleProduct:!googleProduct }" queryParamsHandling="merge"
-            />
+            [routerLink]="[]" [queryParams]="{google:!googleProduct}" queryParamsHandling="merge"/>
           <label class="form-check-label" for="flexCheckChecked">
             Una campanya de Google Ads (200€)
           </label>

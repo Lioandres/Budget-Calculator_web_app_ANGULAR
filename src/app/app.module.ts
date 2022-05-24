@@ -10,6 +10,8 @@ import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PressupostListComponent } from './pressupost-list/pressupost-list.component';
 import { QuotationFormComponent } from './quotation-form/quotation-form.component';
+import { InputButtomsPagesComponent } from './input-buttoms-pages/input-buttoms-pages.component';
+import { ModalPagesComponent } from './modal-pages/modal-pages.component';
 
 
 
@@ -29,7 +31,7 @@ const appRoutes:Routes=[
     pathMatch:'full'
   },
   {
-    path:'home/:webProduct/:seoProduct/:googleProduct',
+    path:'home/:web/:seo/:google/:numPages/:numLang/:start',
     component:HomeComponent,
     pathMatch:'full'
   },
@@ -48,7 +50,9 @@ const appRoutes:Routes=[
     InputButtonsComponent,
     ModalComponent,
     PressupostListComponent,
-    QuotationFormComponent
+    QuotationFormComponent,
+    InputButtomsPagesComponent,
+    ModalPagesComponent
     
   ],
   imports: [

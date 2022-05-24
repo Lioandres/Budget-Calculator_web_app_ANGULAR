@@ -26,26 +26,26 @@ export class InputButtonsComponent implements OnInit, ControlValueAccessor {
 @Output() sendToCalculate:EventEmitter<any>=new EventEmitter<number>();
 
 
-  value:any=0
+  languages:any=0
 
   
   increase(){
-    this.value++
-    this.onChange(this.value)
-    this.onTouch(this.value)
+    this.languages++
+    this.onChange(this.languages)
+    this.onTouch(this.languages)
     this.sendToCalculate.emit()
   }
 
   decrease(){
-    this.value--
-    this.onChange(this.value)
-    this.onTouch(this.value)
+    this.languages--
+    this.onChange(this.languages)
+    this.onTouch(this.languages)
     this.sendToCalculate.emit()
     
   }
   calcManualEnter(){
-    this.onChange(this.value)
-    this.onTouch(this.value)
+    this.onChange(this.languages)
+    this.onTouch(this.languages)
     this.sendToCalculate.emit()
   }
   
@@ -54,13 +54,13 @@ onChange:any =() => {}
 onTouch:any=()=>{}
 disabled:boolean=false
 
-writeValue(valueI:number):void{
-this.value=valueI
+writeValue(languagesI:number):void{
+this.languages=languagesI
 
 }
 
 registerOnChange(fn:any):void{
-  this.onChange=fn  //llama  a la funcion misma onChange
+  this.onChange=fn  //Call to the same function onChange
 }
 
 
