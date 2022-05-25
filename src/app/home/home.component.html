@@ -12,7 +12,7 @@
           <label class="form-check-label" for="flexCheckDefault">
             Una pàgina web (500€)
           </label>
-          <app-panell *ngIf='webProduct' (sendTotalToHome)="addExtraToTotal($event)"
+          <app-panell *ngIf='webProduct' (sendTotalToHome)="setExtra($event) ; showTotal()"
           (sendPagesLabnToHome)="addPageandLang($event)">
           </app-panell>
 

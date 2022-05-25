@@ -25,7 +25,7 @@ ngOnInit() {
    this.numPages=params['numPages'] || 0
    this.numLang=params['numLang'] || 0
 
-   this.showTotal()
+   
  })
    
 }              
@@ -43,16 +43,29 @@ ngOnInit() {
   numLang:number=0
 
  
+  
+  // showTotal(event:number){
+  //   this.addExtra=event
+  //   this.total=this.auxServices.calcTotal(this.webProduct,this.seoProduct,this.googleProduct,this.addExtra)
+  //   console.log(event)
+  //   }
+ 
+
+  // addExtraToTotal(event:number){
+  // this.addExtra=event
+  // this.total=this.auxServices.calcTotal(this.webProduct,this.seoProduct,this.googleProduct,this.addExtra)
+  // console.log(event)  
+  // }
+
   showTotal(){
     if (!this.webProduct) this.addExtra=0
    this.total=this.auxServices.calcTotal(this.webProduct,this.seoProduct,this.googleProduct,this.addExtra)
     }
+  
+  setExtra(extra:any){
+      this.addExtra=extra}
 
-  addExtraToTotal(event:number){
-  this.addExtra=event
-  this.total=this.auxServices.calcTotal(this.webProduct,this.seoProduct,this.googleProduct,this.addExtra)
-  console.log(event)  
-  }
+  
 
   addQuotByService(quotInfo:[string,string]){
     this.auxServices.addQuotation(
